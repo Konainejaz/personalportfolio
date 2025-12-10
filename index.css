@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-900: #0c4a6e;
+  --color-dark-bg: #0f172a;
+  --color-dark-card: #1e293b;
+  --color-dark-text: #f1f5f9;
+}
 
 body {
   font-family: 'Inter', sans-serif;

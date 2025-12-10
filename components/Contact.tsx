@@ -96,10 +96,13 @@ const Contact: React.FC = () => {
               <div className="bg-primary-100 dark:bg-primary-900/30 p-4 rounded-xl text-primary-600 dark:text-primary-400">
                 <Mail className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">Email</h3>
                 <p className="text-slate-500 dark:text-slate-400 mb-1">Drop me a line anytime</p>
-                <a href={`mailto:${CONTACT_INFO.email}`} className="text-lg font-medium text-primary-600 hover:text-primary-700 dark:hover:text-primary-400 transition-colors">
+                <a 
+                  href={`mailto:${CONTACT_INFO.email}`} 
+                  className="block text-lg font-medium text-primary-600 hover:text-primary-700 dark:hover:text-primary-400 transition-colors break-words leading-tight"
+                >
                   {CONTACT_INFO.email}
                 </a>
               </div>
@@ -109,10 +112,13 @@ const Contact: React.FC = () => {
               <div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-xl text-green-600 dark:text-green-400">
                 <Phone className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">Phone</h3>
                 <p className="text-slate-500 dark:text-slate-400 mb-1">Mon-Fri from 9am to 6pm</p>
-                <a href={`tel:${CONTACT_INFO.phone}`} className="text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors">
+                <a 
+                  href={`tel:${CONTACT_INFO.phone}`} 
+                  className="inline-flex text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-primary-600 transition-colors whitespace-nowrap leading-tight"
+                >
                   {CONTACT_INFO.phone}
                 </a>
               </div>
@@ -122,7 +128,7 @@ const Contact: React.FC = () => {
               <div className="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-xl text-purple-600 dark:text-purple-400">
                 <MapPin className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">Location</h3>
                 <p className="text-slate-500 dark:text-slate-400 mb-1">Open to remote work worldwide</p>
                 <p className="text-lg font-medium text-slate-700 dark:text-slate-200">

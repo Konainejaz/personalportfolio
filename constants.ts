@@ -30,6 +30,7 @@ export const CONTACT_INFO: ContactInfo = {
   email: "quonainejaz123@gmail.com",
   location: "Lahore, Pakistan (Open to Remote Roles)",
   linkedin: "https://linkedin.com/in/quonain-khan-545084151",
+  website: "https://quonainejaz.vercel.app",
 };
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
@@ -135,18 +136,9 @@ export const PROJECTS_DATA: ProjectItem[] = [
     link: "https://cmd.jobsitesentry.com/",
     image: "/projects/Jobsite-sentry.png",
   },
+ 
   {
     id: 3,
-    title: "AimOnIt",
-    category: "React Vite",
-    description:
-      "A white-labeled video surveillance solution for industrial monitoring. Features include mobile surveillance unit management, live monitoring, and incident response.",
-    technologies: ["React", "Vite", "Redux", "MapLibre"],
-    link: "https://cmd.aimonit.com/",
-    image: "/projects/Aimonit.png",
-  },
-  {
-    id: 4,
     title: "MyQuicks",
     category: "React Next.js",
     description:
@@ -156,7 +148,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     image: "/projects/MyQuicks.png",
   },
   {
-    id: 5,
+    id: 4,
     title: "EZPick App",
     category: "React Native",
     description:
@@ -166,7 +158,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     image: "/projects/Ezpick.png",
   },
   {
-    id: 6,
+    id: 5,
     title: "Eblal Patient App",
     category: "React Native",
     description:
@@ -174,6 +166,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
     technologies: ["React Native", "API Integration"],
     link: "https://play.google.com/store/search?q=Eblal+Patient+App&c=apps",
     image: "/projects/Eblal.png",
+  }, {
+    id: 6,
+    title: "AimOnIt",
+    category: "React Vite",
+    description:
+      "A white-labeled video surveillance solution for industrial monitoring. Features include mobile surveillance unit management, live monitoring, and incident response.",
+    technologies: ["React", "Vite", "Redux", "MapLibre"],
+    link: "https://cmd.aimonit.com/",
+    image: "/projects/Aimonit.png",
   },
   
 ];

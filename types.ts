@@ -25,6 +25,7 @@ export interface ContactInfo {
   email: string;
   location: string;
   linkedin: string;
+  website?: string;
 }
 
 export interface ProjectItem {

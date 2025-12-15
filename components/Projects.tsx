@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
           <div className="inline-flex p-1 bg-slate-100 dark:bg-slate-800 rounded-xl">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === 'all'
                   ? 'bg-white dark:bg-dark-card text-primary-600 dark:text-primary-400 shadow-sm'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveCategory('web')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === 'web'
                   ? 'bg-white dark:bg-dark-card text-primary-600 dark:text-primary-400 shadow-sm'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveCategory('mobile')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === 'mobile'
                   ? 'bg-white dark:bg-dark-card text-primary-600 dark:text-primary-400 shadow-sm'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Code2 } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, Moon, Sun, Code2, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useReactToPrint } from 'react-to-print';
+import { Resume } from './Resume';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -10,6 +12,12 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const componentRef = useRef<HTMLDivElement>(null);
+
+  const handlePrint = useReactToPrint({
+    contentRef: componentRef,
+    documentTitle: "Quonain_Ejaz_Resume",
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,6 +82,14 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                 {link.name}
               </a>
             ))}
+
+            <button
+              onClick={() => handlePrint()}
+              className="flex items-center space-x-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors shadow-sm cursor-pointer"
+            >
+              <Download size={18} />
+              <span className="font-medium">Resume</span>
+            </button>
             
             <button
               onClick={toggleDarkMode}
@@ -125,10 +141,24 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                   {link.name}
                 </a>
               ))}
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  handlePrint();
+                }}
+                className="w-full text-left px-3 py-4 text-base font-medium text-primary-600 dark:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors flex items-center space-x-2"
+              >
+                <Download size={18} />
+                <span>Download Resume</span>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div className="hidden">
+        <Resume ref={componentRef} />
+      </div>
     </nav>
   );
 };

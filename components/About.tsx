@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PERSONAL_INFO, EDUCATION_DATA } from '../constants';
 import { GraduationCap, Award } from 'lucide-react';
+import Typewriter from './Typewriter';
 
 const About: React.FC = () => {
   return (
@@ -29,8 +30,8 @@ const About: React.FC = () => {
              viewport={{ once: true }}
              transition={{ delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
-              Turning complex problems into simple, beautiful designs.
+            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6 min-h-[64px]">
+              <Typewriter text="Turning complex problems into simple, beautiful designs." />
             </h3>
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
               {PERSONAL_INFO.about}

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { EXPERIENCE_DATA } from '../constants';
 import { Briefcase, CheckCircle2 } from 'lucide-react';
+import Typewriter from './Typewriter';
 
 const Experience: React.FC = () => {
   return (
@@ -17,8 +18,8 @@ const Experience: React.FC = () => {
             Work Experience
           </h2>
           <div className="w-20 h-1.5 bg-primary-500 mx-auto rounded-full"></div>
-          <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            My professional journey in building web and mobile solutions.
+          <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto min-h-[24px]">
+            <Typewriter text="My professional journey in building web and mobile solutions." />
           </p>
         </motion.div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { PERSONAL_INFO, CONTACT_INFO } from '../constants';
+import Typewriter from './Typewriter';
 
 const Hero: React.FC = () => {
   return (
@@ -33,8 +34,10 @@ const Hero: React.FC = () => {
               Open to Remote Roles 🚀
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">{PERSONAL_INFO.name}</span>
+            <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">
+                <Typewriter text={PERSONAL_INFO.name} />
+              </span>
             </h1>
             
             <h2 className="text-2xl lg:text-3xl font-semibold text-slate-600 dark:text-slate-300 mb-6">

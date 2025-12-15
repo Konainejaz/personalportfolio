@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SKILL_CATEGORIES } from '../constants';
 import { Database, Code, Layout, GitBranch, Layers, Cpu, Server } from 'lucide-react';
+import Typewriter from './Typewriter';
 
 const Skills: React.FC = () => {
   // Mapping string icon names to components
@@ -92,7 +93,9 @@ const Skills: React.FC = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-primary-50 dark:bg-slate-800 px-6 py-3 rounded-full border border-primary-100 dark:border-slate-700">
             <Cpu className="text-primary-500" size={20} />
-            <span className="text-slate-700 dark:text-slate-300 font-medium">Always learning new technologies to stay ahead.</span>
+            <span className="text-slate-700 dark:text-slate-300 font-medium">
+              <Typewriter text="Always learning new technologies to stay ahead." />
+            </span>
           </div>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CONTACT_INFO } from '../constants';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import Typewriter from './Typewriter';
 
 import emailjs from '@emailjs/browser';
 
@@ -78,8 +79,8 @@ const Contact: React.FC = () => {
             Get In Touch
           </h2>
           <div className="w-20 h-1.5 bg-primary-500 mx-auto rounded-full"></div>
-          <p className="mt-4 text-slate-600 dark:text-slate-400">
-            Have a project in mind or want to hire me? Let's connect.
+          <p className="mt-4 text-slate-600 dark:text-slate-400 min-h-[24px]">
+            <Typewriter text="Have a project in mind or want to hire me? Let's connect." />
           </p>
         </motion.div>
 

@@ -26,3 +26,18 @@ export interface ContactInfo {
   location: string;
   linkedin: string;
 }
+
+export interface ProjectItem {
+  id: number;
+  title: string;
+  category: "React Vite" | "React Next.js" | "React Native";
+  description: string;
+  technologies: string[];
+  link?: string;
+  image?: string;
+}
+
+export interface ProjectCategory {
+  title: string;
+  projects: ProjectItem[];
+}

@@ -6,6 +6,16 @@ import { PERSONAL_INFO, CONTACT_INFO } from '../constants';
 const Hero: React.FC = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/mypics/banner.jpeg" 
+          alt="Background Banner" 
+          className="w-full h-full object-cover object-top opacity-10 dark:opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-white/90 dark:from-dark-bg/90 dark:via-dark-bg/80 dark:to-dark-bg/90"></div>
+      </div>
+
       {/* Background Decor */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl opacity-50 z-0"></div>
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-purple-100 dark:bg-purple-900/20 rounded-full blur-3xl opacity-50 z-0"></div>
@@ -75,11 +85,11 @@ const Hero: React.FC = () => {
           >
             <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="https://picsum.photos/800/800?grayscale" 
-                alt="Developer Coding" 
-                className="w-full h-full object-cover"
+                src="/mypics/Portait.png" 
+                alt="Quonain Ejaz" 
+                className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8">
                 <div className="text-white">
                   <p className="font-bold text-xl">Clean Code &</p>
                   <p className="font-light text-lg">Performance Optimization</p>

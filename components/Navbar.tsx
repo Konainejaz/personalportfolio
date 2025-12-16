@@ -57,10 +57,12 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 300);
   };
 
   const menuVariants = {
@@ -95,10 +97,10 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         onMouseMove={handleMouseMove}
-        className={`fixed w-full z-50 transition-all duration-300 group ${
+        className={`fixed w-full z-50 transition-all duration-300 group will-change-transform ${
           scrolled 
-            ? 'bg-white/80 dark:bg-dark-bg/90 backdrop-blur-md shadow-lg py-3' 
-            : 'bg-transparent py-5'
+            ? 'bg-white/80 dark:bg-dark-bg/90 backdrop-blur-md shadow-lg border-b border-slate-100 dark:border-slate-800' 
+            : 'bg-transparent'
         }`}
       >
         {/* Spotlight Effect */}
@@ -115,10 +117,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex justify-between items-center">
-            
-            {/* Logo */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-20 flex items-center justify-between">
+          {/* Logo */}
             <motion.div 
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -213,12 +213,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center space-x-4">
+            <div className="md:hidden flex items-center space-x-2">
               <motion.button
                 onClick={toggleDarkMode}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-yellow-400 cursor-pointer"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-yellow-400 cursor-pointer"
+                aria-label="Toggle Dark Mode"
               >
                 {darkMode ? <Sun size={20} /> : <Moon size={20} />}
               </motion.button>
@@ -226,17 +227,17 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                 onClick={() => setIsOpen(!isOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="text-slate-800 dark:text-white focus:outline-none"
+                className="w-12 h-12 flex items-center justify-center text-slate-800 dark:text-white focus:outline-none cursor-pointer"
+                aria-label="Toggle Menu"
               >
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
               </motion.button>
             </div>
           </div>
-        </div>
 
         {/* Scroll Progress Bar */}
         <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 origin-left"
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 origin-left z-50"
           style={{ scaleX }}
         />
 
@@ -248,7 +249,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="md:hidden bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl border-t dark:border-slate-700 shadow-xl overflow-hidden"
+              className="absolute top-20 left-0 w-full md:hidden bg-white/95 dark:bg-dark-card/95 backdrop-blur-xl border-t dark:border-slate-700 shadow-xl overflow-hidden z-40"
             >
               <div className="px-4 pt-2 pb-6 space-y-2">
                 {navLinks.map((link) => (
@@ -260,13 +261,13 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className="block px-3 py-4 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors relative overflow-hidden group/mobile-link"
+                    className="block w-full px-3 py-4 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors relative overflow-hidden group/mobile-link cursor-pointer"
                   >
-                    <span className="relative z-10 transition-transform duration-300 group-hover/mobile-link:translate-x-2 inline-block">
+                    <span className="relative z-10 transition-transform duration-300 group-hover/mobile-link:translate-x-2 inline-block pointer-events-none">
                       {link.name}
                     </span>
                     <motion.div 
-                      className="absolute inset-0 bg-primary-50 dark:bg-slate-800 origin-left"
+                      className="absolute inset-0 bg-primary-50 dark:bg-slate-800 origin-left pointer-events-none"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ type: "spring", bounce: 0, duration: 0.3 }}

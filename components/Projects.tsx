@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PROJECTS_DATA } from '../constants';
 import { ExternalLink, Smartphone, Globe, LayoutGrid } from 'lucide-react';
-import Typewriter from './Typewriter';
 
 const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'mobile'>('all');
@@ -27,9 +26,9 @@ const Projects: React.FC = () => {
             Projects
           </h2>
           <div className="w-20 h-1.5 bg-primary-500 mx-auto rounded-full"></div>
-          <p className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto min-h-[24px]">
-            <Typewriter text="A showcase of my work in React.js, Next.js, and React Native." />
-          </p>
+          <div className="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            A showcase of my work in React.js, Next.js, and React Native.
+          </div>
         </motion.div>
 
         {/* Category Tabs */}

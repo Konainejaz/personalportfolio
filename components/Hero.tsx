@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600 inline-block min-w-[250px] md:min-w-[300px]">
                 <Typewriter text={PERSONAL_INFO.name} />
               </span>
             </h1>
